@@ -7,12 +7,27 @@ export default function Solutions() {
   const router = useRouter();
 
   const slides = [
-    { id: 1, image: "/carousel/RJ.jpg", title: 'Rio de Janeiro' },
-    { id: 2, image: "/carousel/london.jpg", title: 'Londres', },
-    { id: 3, image: "/carousel/newYork.jpg", title: 'Nova York', },
-    { id: 4, image: "/carousel/monaco.jpg", title: 'Mônaco', },
+    {
+      id: 1, image: "/carousel/RJ.jpg",
+      title: 'Rio de Janeiro'
+    },
+    {
+      id: 2, image: "/carousel/london.jpg",
+      title: 'Londres',
+    },
+    {
+      id: 3, image: "/carousel/newYork.jpg",
+      title: 'Nova York',
+    },
+    {
+      id: 4, image: "/carousel/monaco.jpg",
+      title: 'Mônaco',
+    },
     { id: 5, image: "/carousel/machu-picchu.jpg", title: 'Machu Pichu', },
-    { id: 6, image: "/carousel/coliseum.jpg", title: 'Roma', },
+    {
+      id: 6, image: "/carousel/coliseum.jpg",
+      title: 'Roma',
+    },
   ];
 
   const loopSlides = [...slides, ...slides];

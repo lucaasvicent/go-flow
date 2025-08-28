@@ -11,7 +11,7 @@ export default function About() {
       />
 
       <ImageToText
-        image="/coliseum.jpg"
+        image="/carousel/coliseum.jpg"
         title="Nossa missão"
         text="Na Go Flow, nossa missão é transformar cada viagem em uma experiência única e inesquecível. Queremos que explorar o mundo seja simples, inspirador e cheio de significado, conectando pessoas a culturas, histórias e lugares de forma autêntica.
 

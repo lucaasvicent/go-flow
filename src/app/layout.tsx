@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
-import Footer from "./components/layout/Footer";
+import Footer from "./components/layout/footer/Footer";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -17,7 +17,7 @@ export const metadata: Metadata = {
   title: "Go Flow",
   description: "Conheça culturas, viva o Flow!",
   icons: {
-    icon: "/GoFlow.jpg"
+    icon: "/logoTransFontBranca.png",
   }
 };
 
@@ -31,6 +31,7 @@ export default function RootLayout({
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
+        
         {children}
         <Footer />
       </body>

@@ -1,7 +1,12 @@
+import Header from "../../layout/header/Header";
+
 export default function Hero() {
   return (
-    <div className="relative flex h-screen w-full items-center justify-center overflow-hidden">
-      {/* Background com vídeo */}
+    <div className="relative flex h-svh w-full items-center justify-center overflow-hidden">
+      <div className="absolute top-0 w-full h-full z-10">
+        <Header />
+      </div>
+      
       <video
         autoPlay
         loop
@@ -12,11 +17,9 @@ export default function Hero() {
         <source src="/sky-background.mp4" type="video/mp4" />
       </video>
 
-      {/* Overlay escuro para contraste */}
       <div className="absolute inset-0 bg-black/40" />
 
-      {/* Conteúdo */}
-      <div className="relative z-10 flex flex-col items-center justify-center text-center px-4">
+      <div className="relative z-1 flex flex-col items-center justify-center text-center px-4">
         <h1 className="text-6xl md:text-7xl font-extrabold text-white drop-shadow-lg">
           Go Flow
         </h1>

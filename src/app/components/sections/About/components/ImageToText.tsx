@@ -17,7 +17,7 @@ export default function ImageToText({ image, text, title, alt, reverse = false }
         ${reverse ? 'sm:flex-row-reverse' : ''}
       `}
     >
-      {/* imagem */}
+
       <div className="sm:w-1/2 flex justify-center">
         <Image
           alt={alt}
@@ -28,7 +28,6 @@ export default function ImageToText({ image, text, title, alt, reverse = false }
         />
       </div>
 
-      {/* texto */}
       <div className="sm:w-1/2 text-center sm:text-left">
         <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold text-blue-400">
           {title}

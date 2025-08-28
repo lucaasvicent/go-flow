@@ -1,9 +1,9 @@
-import { Github, House, Linkedin } from "lucide-react";
+import { Github, House, Linkedin, MapPinned } from "lucide-react";
 import Link from "next/link";
 
 export default function Footer() {
   return (
-    <footer className="flex flex-col items-center justify-center py-8 text-center bg-black text-white gap-6">
+    <footer id="contact" className="flex flex-col items-center justify-center py-8 text-center bg-black text-white gap-6">
       <h1 className="text-4xl font-bold hover:text-blue-400 -transition-colors cursor-pointer">
         Go Flow
       </h1>
@@ -12,6 +12,12 @@ export default function Footer() {
         <Link href="/" className="flex items-center gap-2 hover:text-blue-400 -transition-colors">
           <House size={18} />
           <span>Home</span>
+        </Link>
+        <Link
+          href="/places" target="_blank"
+          className="flex items-center gap-2 hover:text-blue-400 -transition-colors">
+          <MapPinned size={18} />
+          <span>Locais</span>
         </Link>
         <Link
           href="https://www.linkedin.com/in/lucas-vicente0408/"
