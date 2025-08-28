@@ -1,4 +1,4 @@
-import { ImageToText } from "./components";
+import ImageToText from "./components/ImageToText";
 
 export default function About() {
   return (
