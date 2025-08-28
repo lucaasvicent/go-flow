@@ -1,17 +1,97 @@
+"use client";
+import { CircleDollarSign, CircleUser, HandHelping, HeartHandshake, Hotel, Lightbulb, LightbulbIcon, MapPinned, MessageCircleQuestionMark, ShieldCheck } from "lucide-react";
+
+const faqs = [
+  {
+    question: "O que é o Go Flow?",
+    answer:
+      "O Go Flow é uma plataforma pensada para simplificar sua jornada de viagem, conectando você a experiências autênticas, opções de hospedagem e atividades personalizadas.",
+    icon: <MessageCircleQuestionMark size={20} />,
+  },
+  {
+    question: "Como o Go Flow me ajuda a planejar minha viagem?",
+    answer:
+      "Você encontra inspirações, sugestões de roteiros e ferramentas para organizar sua viagem de forma prática e fluida — tudo em um só lugar.",
+    icon: <Lightbulb size={20} />,
+  },
+  {
+    question: "Preciso pagar para usar o Go Flow?",
+    answer:
+      "A navegação básica é gratuita. Algumas funcionalidades premium, como recomendações exclusivas e pacotes personalizados, podem ter custo adicional.",
+    icon: <CircleDollarSign size={20} />,
+  },
+  {
+    question: "Posso reservar hospedagem e passeios direto pela plataforma?",
+    answer:
+      "Sim! O Go Flow conecta você a parceiros de confiança, permitindo reservar hospedagens, passeios e experiências sem sair da plataforma.",
+    icon: <Hotel size={20} />
+  },
+  {
+    question: "O Go Flow funciona apenas no Brasil?",
+    answer:
+      "Não. Embora tenhamos forte presença no Brasil, o Go Flow oferece experiências em diversos destinos internacionais.",
+    icon: <MapPinned size={20} />
+  },
+  {
+    question: "É seguro usar o Go Flow para reservar minha viagem?",
+    answer:
+      "Sim. Trabalhamos apenas com parceiros certificados e utilizamos meios de pagamento seguros para proteger suas informações.",
+    icon: <ShieldCheck size={20} />
+  },
+  {
+    question: "O Go Flow pode me ajudar a encontrar experiências locais autênticas?",
+    answer:
+      "Com certeza! Nosso foco é conectar você a atividades culturais, gastronômicas e imersivas que tornam cada viagem única.",
+    icon: <LightbulbIcon size={20} />
+  },
+  {
+    question: "Preciso criar uma conta para usar?",
+    answer:
+      "Não para explorar os destinos. Mas, ao criar uma conta, você terá acesso a funcionalidades exclusivas como salvar roteiros, personalizar sua experiência e receber recomendações personalizadas.",
+    icon: <CircleUser size={20} />
+  },
+  {
+    question: "O Go Flow oferece suporte em caso de problemas durante a viagem?",
+    answer:
+      "Sim. Nossa equipe de suporte está disponível para auxiliar com dúvidas ou imprevistos, em parceria com os prestadores locais.",
+    icon: <HandHelping size={20} />
+  },
+  {
+    question: "O que diferencia o Go Flow de outras plataformas de viagem?",
+    answer:
+      "A fluidez: reunimos inspiração, planejamento e reservas em uma experiência única, com foco em autenticidade e confiança.",
+    icon: <HeartHandshake size={20} />
+  },
+];
+
 export default function FAQ() {
   return (
-    <div className="flex flex-col items-center justify-center bg-red-50">
-      <div>
-        {/* container das questões */}
-        <div className="container mx-auto max-w-7xl px-4 py-16 sm:px-6 lg:px-8">
-          <h2 className="text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl">
-            Perguntas frequentes
-          </h2>
-          <p className="mt-4 text-lg text-gray-500">
-            Aqui você encontrará respostas para as perguntas mais frequentes sobre o projeto.
-          </p>
-        </div>
+    <section className="w-full max-w-5xl mx-auto py-16 px-6">
+      <div className="text-center mb-12">
+        <h2 className="text-4xl font-bold text-blue-500">
+          FAQ - Go Flow
+        </h2>
+        <p className="text-gray-500 mt-2">
+          Aqui estão algumas das perguntas mais frequentes sobre o Go Flow
+        </p>
       </div>
-    </div>
-  )
-};
+
+      <div className="relative border-l-2 border-gray-200">
+        {faqs.map((faq, index) => (
+          <div key={index} className="mb-10 ml-8">
+            {/* Ícone */}
+            <div className="absolute -left-5 w-10 h-10 flex items-center justify-center rounded-full bg-blue-50 text-blue-500">
+              {faq.icon}
+            </div>
+
+            {/* Conteúdo */}
+            <h3 className="text-lg font-semibold text-gray-900 mb-2">
+              {faq.question}
+            </h3>
+            <p className="text-gray-600 text-sm leading-relaxed">{faq.answer}</p>
+          </div>
+        ))}
+      </div>
+    </section>
+  );
+}

@@ -21,7 +21,7 @@ export default function Footer() {
           <span>Linkedin</span>
         </Link>
         <Link
-          href="https://github.com/lucaasvicente" target="_blank"
+          href="https://github.com/lucaasvicent" target="_blank"
           className="flex items-center gap-2 hover:text-blue-400 -transition-colors">
           <Github size={18} />
           <span>Github</span>

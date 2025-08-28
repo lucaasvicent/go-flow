@@ -20,9 +20,13 @@ export default function Hero() {
         <h1 className="text-6xl md:text-7xl font-extrabold text-white drop-shadow-lg">
           Go Flow
         </h1>
-        <p className="mt-4 text-2xl md:text-3xl text-gray-200 drop-shadow-md">
+        <p
+          className="mt-4 text-2xl md:text-3xl text-gray-200 drop-shadow-md">
           Conheça culturas, viva o{" "}
-          <span className="text-blue-400 font-semibold">Flow!</span>
+          <span
+            className="text-blue-400 font-semibold">
+            Flow!
+          </span>
         </p>
       </div>
     </div>
