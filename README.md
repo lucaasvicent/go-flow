@@ -1,36 +1,71 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# 🌍 Go Flow
 
-## Getting Started
+O **Go Flow** é um projeto em desenvolvimento que tem como objetivo proporcionar uma experiência única para quem busca conhecer novos lugares e suas culturas. 🚀
 
-First, run the development server:
+Atualmente, o projeto conta com uma **Landing Page**, mas em breve novas funcionalidades estarão disponíveis, como páginas dedicadas a diferentes locais, onde será possível explorar informações sobre a cultura, curiosidades e muito mais.
+
+<img width="2560" height="1392" alt="Captura de tela 2025-09-03 222328" src="https://github.com/user-attachments/assets/3d4afb93-0fcf-49a5-ab6f-b0b872befff1" />
+
+
+---
+
+## ✨ Features
+
+* [x] Landing Page moderna e responsiva
+* [ ] Página com listagem de locais
+* [ ] Detalhes culturais e históricos de cada local
+* [ ] Exploração interativa e dinâmica
+
+---
+
+## 🛠️ Tecnologias utilizadas
+
+* [Next.js (App Router)](https://nextjs.org/)
+* [Tailwind CSS](https://tailwindcss.com/)
+* [Lucide Icons](https://lucide.dev/)
+
+---
+
+## 🚀 Como rodar o projeto
+
+Clone o repositório:
+
+```bash
+git clone https://github.com/seu-usuario/go-flow.git
+```
+
+Instale as dependências:
+
+```bash
+npm install
+```
+
+Rode o servidor de desenvolvimento:
 
 ```bash
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+O projeto estará disponível em:
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+```
+http://localhost:3000
+```
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+---
 
-## Learn More
+## 📌 Status do projeto
 
-To learn more about Next.js, take a look at the following resources:
+🚧 Em desenvolvimento. Novas features em breve!
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+---
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+## 📷 Demonstração
 
-## Deploy on Vercel
+👉 [Acesse aqui a versão hospedada](https://go-flow-weld.vercel.app/)
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+---
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+## 📄 Licença
+
+Este projeto está sob a licença MIT.
