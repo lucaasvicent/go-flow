@@ -2,32 +2,35 @@ import ImageToText from "./components/ImageToText";
 
 export default function About() {
   return (
-    <div className="flex flex-col items-center justify-center py-12 text-center bg-white">
+    <section id="sobre" className="flex flex-col items-center justify-center py-12 text-center bg-white scroll-mt-24">
       <ImageToText
-        image="/beach-chair.jpg"
+        image="/beach-chair.webp"
         title="Quem somos?"
-        text="Somos uma plataforma pensada para quem busca explorar o mundo com autenticidade, fluidez e confiança. Trabalhamos para que cada etapa da sua viagem seja tranquila: desde a inspiração e o planejamento até os momentos inesquecíveis que você vai viver no destino."
+        paragraphs={[
+          "Somos uma plataforma para quem quer conhecer um destino de verdade antes mesmo de chegar lá. Reunimos a cultura, as curiosidades e os lugares imperdíveis de cada cidade em um só lugar.",
+        ]}
         alt="Uma cadeira de praia em um lago"
       />
 
       <ImageToText
-        image="/carousel/coliseum.jpg"
+        image="/carousel/coliseum.webp"
         title="Nossa missão"
-        text="Na Go Flow, nossa missão é transformar cada viagem em uma experiência única e inesquecível. Queremos que explorar o mundo seja simples, inspirador e cheio de significado, conectando pessoas a culturas, histórias e lugares de forma autêntica.
-
-        Acreditamos que viajar é mais do que visitar pontos turísticos — é viver momentos, aprender com novas culturas e criar memórias que ficam para sempre. Por isso, trabalhamos para oferecer uma plataforma intuitiva, confiável e completa, que ajude nossos usuários a planejar, descobrir e aproveitar cada viagem ao máximo.
-
-        Nossa missão é clara: tornar o mundo mais acessível, fluido e emocionante para todos que desejam explorar, aprender e se conectar."
-        alt="Coliseu"
+        paragraphs={[
+          "Viajar é mais do que visitar pontos turísticos — é entender os costumes, provar a comida típica e se conectar com as pessoas do lugar.",
+          "Nossa missão é ajudar você a chegar preparado: sabendo como agir, o que experimentar e o que torna cada destino único.",
+        ]}
+        alt="Coliseu, em Roma"
         reverse
       />
 
       <ImageToText
-        image="/values.jpg"
+        image="/values.webp"
         title="Nossos valores"
-        text="Na Go Flow, valorizamos experiências autênticas, permitindo que cada viagem seja uma verdadeira imersão em novas culturas. Buscamos fluidez e simplicidade, tornando o planejamento e a vivência de cada destino intuitivos e prazerosos. Inspiramos a descoberta, incentivando nossos usuários a explorar, aprender e criar memórias inesquecíveis. Tudo isso com confiança, transparência e respeito ao meio ambiente, promovendo viagens conscientes e acessíveis a todos."
+        paragraphs={[
+          "Autenticidade, curiosidade e respeito. Valorizamos informações com fonte, dicas de quem já esteve lá e viagens que respeitam as culturas e o meio ambiente de cada destino.",
+        ]}
         alt="Cidade iluminada à noite"
       />
-    </div>
+    </section>
   );
 }

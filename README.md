@@ -31,7 +31,7 @@ Atualmente, o projeto conta com uma **Landing Page**, mas em breve novas funcion
 Clone o repositório:
 
 ```bash
-git clone https://github.com/seu-usuario/go-flow.git
+git clone https://github.com/lucaasvicent/go-flow.git
 ```
 
 Instale as dependências:

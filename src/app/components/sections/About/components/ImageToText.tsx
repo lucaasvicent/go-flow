@@ -3,12 +3,12 @@ import Image from "next/image";
 interface ImageToTextProps {
   image: string;
   title: string;
-  text: string;
+  paragraphs: string[];
   alt: string;
   reverse?: boolean;
 }
 
-export default function ImageToText({ image, text, title, alt, reverse = false }: ImageToTextProps) {
+export default function ImageToText({ image, paragraphs, title, alt, reverse = false }: ImageToTextProps) {
   return (
     <div
       className={`
@@ -24,17 +24,20 @@ export default function ImageToText({ image, text, title, alt, reverse = false }
           src={image}
           width={500}
           height={400}
+          sizes="(min-width: 640px) 50vw, 100vw"
           className="w-full max-w-sm sm:max-w-md md:max-w-lg rounded-xl shadow-xl object-cover"
         />
       </div>
 
       <div className="sm:w-1/2 text-center sm:text-left">
-        <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold text-blue-400">
+        <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-blue-400">
           {title}
-        </h1>
-        <p className="mt-4 text-lg sm:text-xl md:text-2xl text-gray-500 max-w-full sm:max-w-xl">
-          {text}
-        </p>
+        </h2>
+        {paragraphs.map((paragraph) => (
+          <p key={paragraph} className="mt-4 text-lg sm:text-xl text-gray-500 max-w-full sm:max-w-xl">
+            {paragraph}
+          </p>
+        ))}
       </div>
     </div>
   );

@@ -1,81 +1,77 @@
-"use client";
-import { CircleDollarSign, CircleUser, HandHelping, HeartHandshake, Hotel, Lightbulb, LightbulbIcon, MapPinned, MessageCircleQuestionMark, ShieldCheck } from "lucide-react";
+import { CircleDollarSign, CircleUser, Globe, Hotel, Landmark, Lightbulb, MessageCircleQuestionMark, Users } from "lucide-react";
 
 const faqs = [
   {
-    question: "O que é a Go Flow?", answer: "O Go Flow é uma plataforma pensada para simplificar sua jornada de viagem, conectando você a experiências autênticas, opções de hospedagem e atividades personalizadas.", icon: <MessageCircleQuestionMark size={20} />
+    question: "O que é a Go Flow?",
+    answer: "Uma plataforma para conhecer destinos pelo que eles têm de mais especial: cultura, costumes, curiosidades, comida típica e os lugares que valem a visita.",
+    icon: MessageCircleQuestionMark,
   },
   {
-    question: "Como a Go Flow me ajuda a planejar minha viagem?", answer: "Você encontra inspirações, sugestões de roteiros e ferramentas para organizar sua viagem de forma prática e fluida — tudo em um só lugar.", icon: <Lightbulb size={20} />
+    question: "Como a Go Flow me ajuda a planejar minha viagem?",
+    answer: "Em cada destino você encontra dicas de etiqueta local, frases úteis, a melhor época para ir, atrações, restaurantes e hospedagens — tudo reunido em uma página.",
+    icon: Lightbulb,
   },
   {
-    question: "Preciso pagar para usar a Go Flow?", answer: "A navegação básica é gratuita. Algumas funcionalidades premium, como recomendações exclusivas e pacotes personalizados, podem ter custo adicional.", icon: <CircleDollarSign size={20} />
+    question: "De onde vêm as informações?",
+    answer: "De fontes abertas e confiáveis, como Wikipedia, Wikivoyage e OpenStreetMap, sempre com a fonte indicada, somadas às dicas da nossa comunidade de viajantes.",
+    icon: Landmark,
   },
   {
-    question: "Posso reservar hospedagem e passeios direto pela plataforma?", answer: "Sim! A Go Flow conecta você a parceiros de confiança, permitindo reservar hospedagens, passeios e experiências sem sair da plataforma.", icon: <Hotel size={20} />
+    question: "Preciso pagar para usar a Go Flow?",
+    answer: "Não. Explorar os destinos é gratuito.",
+    icon: CircleDollarSign,
   },
   {
-    question: "A Go Flow funciona apenas no Brasil?", answer: "Não. Embora tenhamos forte presença no Brasil, a Go Flow oferece experiências em diversos destinos internacionais.", icon: <MapPinned size={20} />
+    question: "Quais destinos estão disponíveis?",
+    answer: "A ideia é cobrir cidades do mundo todo. Começamos pelos destinos mais procurados e ampliamos a lista continuamente.",
+    icon: Globe,
   },
   {
-    question: "É seguro usar a Go Flow para reservar minha viagem?", answer: "Sim. Trabalhamos apenas com parceiros certificados e utilizamos meios de pagamento seguros para proteger suas informações.", icon: <ShieldCheck size={20} />
+    question: "Posso reservar hotéis e passeios pela plataforma?",
+    answer: "Nós recomendamos, e a reserva é feita diretamente no site de parceiros conhecidos, com as condições e a segurança de cada um.",
+    icon: Hotel,
   },
   {
-    question: "A Go Flow pode me ajudar a encontrar experiências locais autênticas?", answer: "Com certeza! Nosso foco é conectar você a atividades culturais, gastronômicas e imersivas que tornam cada viagem única.", icon: <LightbulbIcon size={20} />
+    question: "Preciso criar uma conta?",
+    answer: "Não para explorar. Com uma conta você poderá salvar destinos favoritos, montar roteiros e contribuir com avaliações e dicas.",
+    icon: CircleUser,
   },
   {
-    question: "Preciso criar uma conta para usar?", answer: "Não para explorar os destinos. Mas, ao criar uma conta, você terá acesso a funcionalidades exclusivas como salvar roteiros, personalizar sua experiência e receber recomendações personalizadas.", icon: <CircleUser size={20} />
-  },
-  {
-    question: "A Go Flow oferece suporte em caso de problemas durante a viagem?", answer: "Sim. Nossa equipe de suporte está disponível para auxiliar com dúvidas ou imprevistos, em parceria com os prestadores locais.", icon: <HandHelping size={20} />
-  },
-  {
-    question: "O que diferencia a Go Flow de outras plataformas de viagem?", answer: "A fluidez: reunimos inspiração, planejamento e reservas em uma experiência única, com foco em autenticidade e confiança.", icon: <HeartHandshake size={20} />
+    question: "Posso contribuir com dicas?",
+    answer: "Sim! Viajantes poderão compartilhar dicas e curiosidades sobre os lugares que conhecem, e a comunidade vota nas mais úteis.",
+    icon: Users,
   },
 ];
 
-export default function FAQ() {
-  const firstHalf = faqs.slice(0, 5);
-  const secondHalf = faqs.slice(5);
+const half = Math.ceil(faqs.length / 2);
+const columns = [faqs.slice(0, half), faqs.slice(half)];
 
+export default function FAQ() {
   return (
-    <section className="w-full max-w-6xl mx-auto py-16 px-6">
+    <section id="faq" className="w-full max-w-6xl mx-auto py-16 px-6 scroll-mt-24">
       <div className="text-center mb-12">
-        <h2 className="text-4xl font-bold text-blue-500">FAQ - Go Flow</h2>
+        <h2 className="text-4xl font-bold text-blue-500">Perguntas frequentes</h2>
         <p className="text-gray-500 mt-2">
-          Aqui estão algumas das perguntas mais frequentes sobre a Go Flow
+          Aqui estão algumas das dúvidas mais comuns sobre a Go Flow
         </p>
       </div>
 
       <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
-        
-        <div className="space-y-10 relative border-l-2 border-gray-200 pl-6">
-          {firstHalf.map((faq, index) => (
-            <div key={index}>
-              <div className="absolute -left-5 w-10 h-10 flex items-center justify-center rounded-full bg-blue-50 text-blue-500">
-                {faq.icon}
+        {columns.map((column, columnIndex) => (
+          <div key={columnIndex} className="space-y-10 border-l-2 border-gray-200 pl-8 ml-5">
+            {column.map(({ question, answer, icon: Icon }) => (
+              <div key={question} className="relative">
+                <div className="absolute -left-[3.3rem] top-0 w-10 h-10 flex items-center justify-center rounded-full bg-blue-50 text-blue-500">
+                  <Icon size={20} />
+                </div>
+                <h3 className="text-lg font-semibold text-gray-900 mb-2">
+                  {question}
+                </h3>
+                <p className="text-gray-600 text-sm leading-relaxed">{answer}</p>
               </div>
-              <h3 className="text-lg font-semibold text-gray-900 mb-2">
-                {faq.question}
-              </h3>
-              <p className="text-gray-600 text-sm leading-relaxed">{faq.answer}</p>
-            </div>
-          ))}
-        </div>
-
-        <div className="space-y-10 relative border-l-2 border-gray-200 pl-6">
-          {secondHalf.map((faq, index) => (
-            <div key={index}>
-              <div className="absolute -left-5 w-10 h-10 flex items-center justify-center rounded-full bg-blue-50 text-blue-500">
-                {faq.icon}
-              </div>
-              <h3 className="text-lg font-semibold text-gray-900 mb-2">
-                {faq.question}
-              </h3>
-              <p className="text-gray-600 text-sm leading-relaxed">{faq.answer}</p>
-            </div>
-          ))}
-        </div>
+            ))}
+          </div>
+        ))}
       </div>
     </section>
   );
