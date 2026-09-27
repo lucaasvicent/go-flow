@@ -1,18 +1,59 @@
 "use client";
 
-import { useEffect, useState } from "react";
+import { useEffect, useState, useTransition } from "react";
 import Image from "next/image";
-import Link from "next/link";
+import { useParams } from "next/navigation";
+import { useLocale, useTranslations } from "next-intl";
 import { X, Menu } from "lucide-react";
+import { Link, usePathname, useRouter } from "@/i18n/navigation";
+import { routing, type Locale } from "@/i18n/routing";
 
-const navLinks = [
-  { href: "/#destinos", label: "Destinos" },
-  { href: "/#sobre", label: "Sobre" },
-  { href: "/#faq", label: "FAQ" },
-  { href: "#contact", label: "Contatos" },
-];
+const sections = [
+  { hash: "destinations", key: "destinations" },
+  { hash: "about", key: "about" },
+  { hash: "faq", key: "faq" },
+  { hash: "contact", key: "contact" },
+] as const;
+
+function LanguageSwitcher({ className = "" }: { className?: string }) {
+  const t = useTranslations("Header");
+  const locale = useLocale();
+  const router = useRouter();
+  const pathname = usePathname();
+  const params = useParams();
+  const [isPending, startTransition] = useTransition();
+
+  const changeLocale = (nextLocale: Locale) => {
+    startTransition(() => {
+      // pathname e params sempre correspondem à rota atual, então a combinação é válida.
+      // @ts-expect-error -- o TypeScript não consegue relacionar pathname e params dinamicamente
+      router.replace({ pathname, params }, { locale: nextLocale });
+    });
+  };
+
+  return (
+    <div role="group" aria-label={t("language")} className={`flex items-center gap-1 text-sm ${className}`}>
+      {routing.locales.map((l) => (
+        <button
+          key={l}
+          type="button"
+          lang={l}
+          disabled={isPending}
+          aria-pressed={l === locale}
+          onClick={() => changeLocale(l)}
+          className={`px-2 py-1 rounded-md uppercase transition-colors ${
+            l === locale ? "bg-white/20 text-white font-semibold" : "text-white/70 hover:text-white"
+          }`}
+        >
+          {l}
+        </button>
+      ))}
+    </div>
+  );
+}
 
 export default function Header() {
+  const t = useTranslations("Header");
   const [scrolled, setScrolled] = useState(false);
   const [drawerOpen, setDrawerOpen] = useState(false);
 
@@ -44,7 +85,7 @@ export default function Header() {
         `}
       >
         <div className="flex items-center justify-between max-w-7xl mx-auto">
-          <Link href="/" aria-label="Go Flow — página inicial" className="flex items-center gap-4">
+          <Link href="/" aria-label={t("homeLabel")} className="flex items-center gap-4">
             <Image
               src="/logoTransFontBranca.png"
               alt="Go Flow"
@@ -55,18 +96,25 @@ export default function Header() {
             />
           </Link>
 
-          <nav className="hidden md:flex items-center gap-6">
-            {navLinks.map((link) => (
-              <Link key={link.href} href={link.href} className="text-white hover:text-blue-300 transition-colors">
-                {link.label}
-              </Link>
-            ))}
-          </nav>
+          <div className="hidden md:flex items-center gap-6">
+            <nav className="flex items-center gap-6">
+              {sections.map((section) => (
+                <Link
+                  key={section.hash}
+                  href={{ pathname: "/", hash: section.hash }}
+                  className="text-white hover:text-blue-300 transition-colors"
+                >
+                  {t(section.key)}
+                </Link>
+              ))}
+            </nav>
+            <LanguageSwitcher />
+          </div>
 
           <div className="md:hidden">
             <button
               onClick={() => setDrawerOpen(true)}
-              aria-label="Abrir menu"
+              aria-label={t("openMenu")}
               aria-expanded={drawerOpen}
               aria-controls="mobile-menu"
             >
@@ -83,23 +131,25 @@ export default function Header() {
         ${drawerOpen ? "translate-x-0" : "translate-x-full invisible"}`}
       >
         <div className="flex justify-end p-4">
-          <button onClick={() => setDrawerOpen(false)} aria-label="Fechar menu">
+          <button onClick={() => setDrawerOpen(false)} aria-label={t("closeMenu")}>
             <X size={28} className="text-white" />
           </button>
         </div>
 
         <nav className="flex flex-col items-start gap-6 px-6 mt-10">
-          {navLinks.map((link) => (
+          {sections.map((section) => (
             <Link
-              key={link.href}
-              href={link.href}
+              key={section.hash}
+              href={{ pathname: "/", hash: section.hash }}
               onClick={() => setDrawerOpen(false)}
               className="text-white hover:text-blue-300 text-lg"
             >
-              {link.label}
+              {t(section.key)}
             </Link>
           ))}
         </nav>
+
+        <LanguageSwitcher className="px-5 mt-10" />
       </div>
 
       {drawerOpen && (

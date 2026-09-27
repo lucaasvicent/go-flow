@@ -12,6 +12,7 @@ Atualmente, o projeto conta com uma **Landing Page**, mas em breve novas funcion
 ## ✨ Features
 
 * [x] Landing Page moderna e responsiva
+* [x] Português e inglês (`/` e `/en`)
 * [ ] Página com listagem de locais
 * [ ] Detalhes culturais e históricos de cada local
 * [ ] Exploração interativa e dinâmica
@@ -23,6 +24,15 @@ Atualmente, o projeto conta com uma **Landing Page**, mas em breve novas funcion
 * [Next.js (App Router)](https://nextjs.org/)
 * [Tailwind CSS](https://tailwindcss.com/)
 * [Lucide Icons](https://lucide.dev/)
+* [next-intl](https://next-intl.dev/) (internacionalização)
+
+---
+
+## 🌐 Traduções
+
+Os textos ficam em `messages/pt.json` e `messages/en.json` (o português é a referência de tipos: uma chave usada no código que não exista em `pt.json` quebra o build). As rotas e os idiomas são configurados em `src/i18n/routing.ts`.
+
+Para adicionar um texto, crie a mesma chave nos dois arquivos e use `useTranslations("Namespace")` no componente.
 
 ---
 

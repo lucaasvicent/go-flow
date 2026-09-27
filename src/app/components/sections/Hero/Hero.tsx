@@ -1,4 +1,8 @@
+import { useTranslations } from "next-intl";
+
 export default function Hero() {
+  const t = useTranslations("Hero");
+
   return (
     <section className="relative flex h-svh w-full items-center justify-center overflow-hidden">
       <video
@@ -21,8 +25,9 @@ export default function Hero() {
           Go Flow
         </h1>
         <p className="mt-4 text-2xl md:text-3xl text-gray-200 drop-shadow-md">
-          Conheça culturas, viva o{" "}
-          <span className="text-blue-400 font-semibold">Flow!</span>
+          {t.rich("tagline", {
+            flow: (chunks) => <span className="text-blue-400 font-semibold">{chunks}</span>,
+          })}
         </p>
       </div>
     </section>

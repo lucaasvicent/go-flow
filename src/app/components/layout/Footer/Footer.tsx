@@ -1,14 +1,17 @@
 import { Github, House, Linkedin, MapPinned } from "lucide-react";
-import Link from "next/link";
+import { useTranslations } from "next-intl";
+import { Link } from "@/i18n/navigation";
 
-const links = [
-  { href: "/", label: "Home", icon: House, external: false },
-  { href: "/#destinos", label: "Destinos", icon: MapPinned, external: false },
-  { href: "https://www.linkedin.com/in/lucas-vicente0408/", label: "Linkedin", icon: Linkedin, external: true },
-  { href: "https://github.com/lucaasvicent", label: "Github", icon: Github, external: true },
+const external = [
+  { href: "https://www.linkedin.com/in/lucas-vicente0408/", label: "Linkedin", icon: Linkedin },
+  { href: "https://github.com/lucaasvicent", label: "Github", icon: Github },
 ];
 
+const linkClass = "flex items-center gap-2 hover:text-blue-400 transition-colors";
+
 export default function Footer() {
+  const t = useTranslations("Footer");
+
   return (
     <footer id="contact" className="flex flex-col items-center justify-center py-8 text-center bg-black text-white gap-6">
       <Link href="/" className="text-4xl font-bold hover:text-blue-400 transition-colors">
@@ -16,16 +19,19 @@ export default function Footer() {
       </Link>
 
       <nav className="flex flex-col items-center justify-center md:flex-row gap-6 md:gap-12">
-        {links.map(({ href, label, icon: Icon, external }) => (
-          <Link
-            key={href}
-            href={href}
-            {...(external && { target: "_blank", rel: "noopener noreferrer" })}
-            className="flex items-center gap-2 hover:text-blue-400 transition-colors"
-          >
+        <Link href="/" className={linkClass}>
+          <House size={18} />
+          <span>{t("home")}</span>
+        </Link>
+        <Link href={{ pathname: "/", hash: "destinations" }} className={linkClass}>
+          <MapPinned size={18} />
+          <span>{t("destinations")}</span>
+        </Link>
+        {external.map(({ href, label, icon: Icon }) => (
+          <a key={href} href={href} target="_blank" rel="noopener noreferrer" className={linkClass}>
             <Icon size={18} />
             <span>{label}</span>
-          </Link>
+          </a>
         ))}
       </nav>
 

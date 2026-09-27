@@ -1,0 +1,108 @@
+{
+  "Metadata": {
+    "title": "Go Flow",
+    "description": "Discover cultures, live the Flow! Learn about the culture, curiosities and places of each destination before you travel.",
+    "ogDescription": "Discover cultures, live the Flow!"
+  },
+  "Header": {
+    "homeLabel": "Go Flow — home page",
+    "destinations": "Destinations",
+    "about": "About",
+    "faq": "FAQ",
+    "contact": "Contact",
+    "openMenu": "Open menu",
+    "closeMenu": "Close menu",
+    "language": "Language"
+  },
+  "Hero": {
+    "tagline": "Discover cultures, live the <flow>Flow!</flow>"
+  },
+  "Destinations": {
+    "title": "Featured destinations",
+    "subtitle": "Culture, curiosities and must-see places around the world",
+    "items": {
+      "rio-de-janeiro-br": { "name": "Rio de Janeiro", "country": "Brazil" },
+      "london-gb": { "name": "London", "country": "United Kingdom" },
+      "new-york-us": { "name": "New York", "country": "United States" },
+      "monaco-mc": { "name": "Monaco", "country": "Monaco" },
+      "machu-picchu-pe": { "name": "Machu Picchu", "country": "Peru" },
+      "rome-it": { "name": "Rome", "country": "Italy" }
+    }
+  },
+  "About": {
+    "who": {
+      "title": "Who are we?",
+      "alt": "A beach chair on a lake",
+      "paragraphs": [
+        "We are a platform for people who want to truly know a destination before they even get there. We bring together the culture, curiosities and must-see places of each city in one place."
+      ]
+    },
+    "mission": {
+      "title": "Our mission",
+      "alt": "The Colosseum, in Rome",
+      "paragraphs": [
+        "Travel is more than visiting landmarks — it's understanding local customs, tasting traditional food and connecting with the people who live there.",
+        "Our mission is to help you arrive prepared: knowing how to behave, what to try and what makes each destination unique."
+      ]
+    },
+    "values": {
+      "title": "Our values",
+      "alt": "A city lit up at night",
+      "paragraphs": [
+        "Authenticity, curiosity and respect. We value sourced information, tips from people who have been there and travel that respects the cultures and the environment of each destination."
+      ]
+    }
+  },
+  "FAQ": {
+    "title": "Frequently asked questions",
+    "subtitle": "Here are some of the most common questions about Go Flow",
+    "items": {
+      "what": {
+        "question": "What is Go Flow?",
+        "answer": "A platform to discover destinations through what makes them special: culture, customs, curiosities, traditional food and the places worth visiting."
+      },
+      "planning": {
+        "question": "How does Go Flow help me plan my trip?",
+        "answer": "For each destination you'll find local etiquette tips, useful phrases, the best time to go, attractions, restaurants and places to stay — all on a single page."
+      },
+      "sources": {
+        "question": "Where does the information come from?",
+        "answer": "From open, reliable sources such as Wikipedia, Wikivoyage and OpenStreetMap, always credited, plus tips from our community of travelers."
+      },
+      "price": {
+        "question": "Do I have to pay to use Go Flow?",
+        "answer": "No. Exploring destinations is free."
+      },
+      "coverage": {
+        "question": "Which destinations are available?",
+        "answer": "The goal is to cover cities all over the world. We start with the most popular destinations and keep expanding the list."
+      },
+      "booking": {
+        "question": "Can I book hotels and tours on the platform?",
+        "answer": "We recommend them, and you book directly on well-known partner websites, under their own terms and security."
+      },
+      "account": {
+        "question": "Do I need an account?",
+        "answer": "Not to explore. With an account you'll be able to save favorite destinations, build itineraries and contribute reviews and tips."
+      },
+      "contribute": {
+        "question": "Can I share tips?",
+        "answer": "Yes! Travelers will be able to share tips and curiosities about places they know, and the community votes for the most helpful ones."
+      }
+    }
+  },
+  "Footer": {
+    "home": "Home",
+    "destinations": "Destinations"
+  },
+  "NotFound": {
+    "title": "Under Construction",
+    "text": "This part of Go Flow is still being prepared for you to explore. New adventures are coming soon!",
+    "back": "Back to Home",
+    "tagline": "Go Flow — Discover cultures, live the <flow>Flow!</flow>"
+  },
+  "Loading": {
+    "title": "Loading your next adventure...",
+    "text": "Get ready to explore amazing experiences with Go Flow."
+  }
+}
